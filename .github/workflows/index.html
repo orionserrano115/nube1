@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modo Oscuro / Día</title>
+  <style>
+    /* Estilos base */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Modo claro (día) */
+    body.light {
+      background-color: #f5f5f5;
+      color: #222;
+    }
+
+    body.light button {
+      background-color: #222;
+      color: #fff;
+    }
+
+    /* Modo oscuro */
+    body.dark {
+      background-color: #121212;
+      color: #eee;
+    }
+
+    body.dark button {
+      background-color: #eee;
+      color: #121212;
+    }
+  </style>
+</head>
+<body class="light">
+  <header>
+    <h1>Ejemplo: Modo Oscuro / Día</h1>
+    <button id="toggleBtn">Cambiar a modo oscuro</button>
+  </header>
+
+  <main style="padding: 1rem; text-align: center;">
+    <p>Este es un ejemplo de página que alterna entre modo claro y oscuro.</p>
+  </main>
+
+  <script>
+    const btn = document.getElementById('toggleBtn');
+    const body = document.body;
+
+    btn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      body.classList.toggle('light');
+
+      if (body.classList.contains('dark')) {
+        btn.textContent = 'Cambiar a modo día';
+      } else {
+        btn.textContent = 'Cambiar a modo oscuro';
+      }
+    });
+  </script>
+</body>
+</html>
